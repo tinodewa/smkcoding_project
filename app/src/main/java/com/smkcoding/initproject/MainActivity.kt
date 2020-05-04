@@ -9,11 +9,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var namaInput : String = ""
-    private var emailInput : String = ""
-    private var telpInput : String = ""
-    private var alamatInput : String = ""
-    private var genderInput : String = ""
+    private var namaInput: String = ""
+    private var emailInput: String = ""
+    private var telpInput: String = ""
+    private var alamatInput: String = ""
+    private var genderInput: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
         setDataSpinnerGender()
     }
 
-//    fungsi untuk pindah ke halaman profil
+    //    fungsi untuk pindah ke halaman profil
     private fun gotoProfilActivity() {
-        val intent = Intent(this, profilActivity::class.java)
+        val intent = Intent(this, ProfilActivity::class.java)
 
         val bundle = Bundle()
         bundle.putString("nama", namaInput)
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-//    fungsi untuk melakukan validasi inputan
+    //    fungsi untuk melakukan validasi inputan
     private fun validasiInput() {
         namaInput = editName.text.toString()
         emailInput = editEMail.text.toString()
@@ -64,15 +64,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-//    fungsi menampilkan toast
+    //    fungsi menampilkan toast
     private fun tampilToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-//    fungsi spinner gender
+    //    fungsi spinner gender
     private fun setDataSpinnerGender() {
-        val adapter = ArrayAdapter.createFromResource(this,
-            R.array.jenis_kelamin, android.R.layout.simple_spinner_item)
+        val adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.jenis_kelamin, android.R.layout.simple_spinner_item
+        )
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerGender.adapter = adapter
