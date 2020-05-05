@@ -9,11 +9,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var namaInput: String = ""
+    private var nameInput: String = ""
+    private var genderInput: String = ""
+    private var ageInput: String = ""
     private var emailInput: String = ""
     private var telpInput: String = ""
-    private var alamatInput: String = ""
-    private var genderInput: String = ""
+    private var addressInput: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +26,15 @@ class MainActivity : AppCompatActivity() {
 
     //    fungsi untuk pindah ke halaman profil
     private fun gotoProfilActivity() {
-        val intent = Intent(this, ProfilActivity::class.java)
+        val intent = Intent(this, ProfileActivity::class.java)
 
         val bundle = Bundle()
-        bundle.putString("nama", namaInput)
+        bundle.putString("nama", nameInput)
         bundle.putString("gender", genderInput)
+        bundle.putString("age", ageInput)
         bundle.putString("email", emailInput)
         bundle.putString("telp", telpInput)
-        bundle.putString("alamat", alamatInput)
+        bundle.putString("alamat", addressInput)
 
         intent.putExtras(bundle)
 
@@ -41,20 +43,22 @@ class MainActivity : AppCompatActivity() {
 
     //    fungsi untuk melakukan validasi inputan
     private fun validasiInput() {
-        namaInput = editName.text.toString()
+        nameInput = editName.text.toString()
+        genderInput = spinnerGender.selectedItem.toString()
+        ageInput = editAge.text.toString()
         emailInput = editEMail.text.toString()
         telpInput = editTelp.text.toString()
-        alamatInput = editAddress.text.toString()
-        genderInput = spinnerGender.selectedItem.toString()
+        addressInput = editAddress.text.toString()
 
         when {
 //            check di tiap inputan apakah kosong atau tidak, jika kosong maka tampil error
-            namaInput.isEmpty() -> editName.error = "Nama tidak boleh kosong"
+            nameInput.isEmpty() -> editName.error = "Nama tidak boleh kosong"
             genderInput.equals("Pilih Jenis Kelamin", ignoreCase = true) ->
                 tampilToast("Jenis kelamin harus dipilih")
+            ageInput.isEmpty() -> editAge.error = "Umur tidak boleh kosong"
             emailInput.isEmpty() -> editEMail.error = "Email tidak boleh kosong"
             telpInput.isEmpty() -> editTelp.error = "Telpon tidak boleh kosong"
-            alamatInput.isEmpty() -> editAddress.error = "Alamat tidak boleh kosong"
+            addressInput.isEmpty() -> editAddress.error = "Alamat tidak boleh kosong"
 
             else -> {
 //                jika semua inputan diisi, jalankan intent

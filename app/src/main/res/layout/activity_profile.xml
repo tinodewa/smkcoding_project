@@ -8,54 +8,55 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ProfilActivity">
+        android:padding="20dp"
+        tools:context=".ProfileActivity">
 
         <TextView
-            android:id="@+id/tv_biodata"
+            android:id="@+id/title_biodata"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="biodata"
             android:layout_alignParentLeft="true"
-            android:gravity="center_horizontal"
-            android:textSize="20sp"
             android:fontFamily="casual"
-            android:textStyle="bold"/>
+            android:gravity="center_horizontal"
+            android:text="biodata"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/iv_foto"
+            android:id="@+id/image_profile"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/ic_person"
-            android:layout_below="@id/tv_biodata"
-            android:layout_centerHorizontal="true"/>
+            android:layout_below="@id/title_biodata"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_person" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/iv_foto">
+            android:layout_below="@id/image_profile"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:orientation="horizontal">
-                
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
-                    android:text="Nama: "/>
+                    android:text="Nama: "
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:text="Dummy text name"/>
-                
+                    android:text="Dummy text name"
+                    android:textSize="18sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -68,16 +69,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
-                    android:text="Jenis Kelamin: "/>
+                    android:text="Jenis Kelamin: "
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtGender"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:text="Laki-laki"/>
+                    android:text="Laki-laki"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -91,16 +92,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
-                    android:text="Email: "/>
+                    android:text="Email: "
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:text="dummy@gmail.com"/>
+                    android:text="dummy@gmail.com"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -114,16 +115,39 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
-                    android:text="Telp: "/>
+                    android:text="Umur: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/txtAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="20"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Telp: "
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtTelp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:text="085123412457"/>
+                    android:text="085123412457"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -137,32 +161,43 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:textSize="18sp"
-                    android:text="Nama: "/>
+                    android:text="Nama: "
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/txtAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textSize="18sp"
-                    android:text="Malang, Indonesia"/>
+                    android:text="Malang, Indonesia"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnEditName"
+                android:id="@+id/btnEditProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="EDIT NAMA"/>
+                android:text="EDIT PROFIL" />
 
             <Button
                 android:id="@+id/btnEditCall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="TELEPON"/>
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="TELEPON" />
+
+            <Button
+                android:id="@+id/btnAbout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:text="ABOUT" />
 
         </LinearLayout>
 

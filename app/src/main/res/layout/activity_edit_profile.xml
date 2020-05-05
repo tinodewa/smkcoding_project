@@ -9,58 +9,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp"
-        tools:context=".MainActivity">
+        tools:context=".EditProfileActivity">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:layout_margin="16dp"
-            android:fontFamily="casual"
-            android:text="Biodata Diri"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:gravity="center_horizontal"
+            android:text="Edit Profil"
+            android:textSize="20sp"/>
 
         <EditText
-            android:id="@+id/editName"
+            android:id="@+id/editProfilName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:hint="Nama" />
 
         <Spinner
-            android:id="@+id/spinnerGender"
+            android:id="@+id/editspinnerGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:entries="@array/jenis_kelamin" />
 
         <EditText
-            android:id="@+id/editAge"
+            android:id="@+id/editProfilEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:hint="Umur (th)"
-            android:inputType="number" />
+            android:hint="Email@gmail.com" />
 
         <EditText
-            android:id="@+id/editEMail"
+            android:id="@+id/editProfilAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:hint="Email" />
+            android:hint="Umur (th)" />
 
         <EditText
-            android:id="@+id/editTelp"
+            android:id="@+id/editProfilTelp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:hint="Telp"
-            android:inputType="number" />
+            android:hint="No. Telp" />
 
         <EditText
-            android:id="@+id/editAddress"
+            android:id="@+id/editProfileAddress"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_margin="16dp"
@@ -68,7 +63,7 @@
             android:inputType="textMultiLine" />
 
         <Button
-            android:id="@+id/btnSave"
+            android:id="@+id/btnEditSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
